@@ -10,7 +10,7 @@ mkdir word_embeddings
 wget http://nlulite.com/download/glove ./data/word_embeddings/
 ```
 
-Running a simple example
+Running a source code
 ------------------------
 
 Pipe a text file from the command line: 
