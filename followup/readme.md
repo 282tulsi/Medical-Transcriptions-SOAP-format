@@ -1,5 +1,5 @@
 Subjective Classification as follow up, new patient tagging
-------------
+-----------------------------------------------------------
 
 
 Dependencies
@@ -13,15 +13,15 @@ Dependencies
 
 
 Usage
-------------
+-----
 
-python follow-up.py model/text.txt convo/test.txt 
+    python follow-up.py model/text.txt convo/test.txt 
 
-First argument to follow-up.py is the model greetings, 2nd argument is doctor-patient conversation.
+    First argument to follow-up.py is the model greetings, 2nd argument is doctor-patient conversation.
 
 
 Output
-------------
+------
 
 Ouput will be displayed in terminal. It shows the
 
