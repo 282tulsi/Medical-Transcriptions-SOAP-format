@@ -20,5 +20,4 @@ Ouput will be displayed in terminal. It shows the
 
     model answer entities
     cosine similarity score 
-    matched entites & number of matched entites
     classified class as follow-up or new-patient or none
