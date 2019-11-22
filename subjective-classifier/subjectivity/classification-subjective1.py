@@ -5,8 +5,6 @@ import time
 import json
 import nltk
 from nltk.tokenize import word_tokenize
-
-# Program extracting first column 
 import xlrd 
 
 _path = os.path.dirname(__file__)
@@ -46,7 +44,6 @@ def print_sentences(sentences_dict):
     	res.append(item)
     	f.write(item + '\n')
     print("RESULT:",res)
-    #f.write(str(item for item in sentences_dict['objective']))
     
     print('\nSUBJECTIVE SENTENCES:')
     f.write('\n')
@@ -63,9 +60,7 @@ def print_sentences(sentences_dict):
     f.write('\n')
     [print(item) for item in sentences_dict['subjective']]
     for item in sentences_dict['subjective']:
-    	#res.append(item)
     	f.write(item + '\n')
-    #f.write(str(item for item in sentences_dict['subjective']))
     f.close()
 
 
@@ -85,9 +80,6 @@ def remove_punctuations(r_sentence):
        if char not in punctuations:
            no_punct = no_punct + char
     return no_punct
-
-#sentence = "It's himself. What's up, dear? How doing? Oh, yeah. Wow, long time, huh? It's long, well, I Ireland four months, I telling. INR 18. Oh. Okay. I Ireland four months. I went away. Oh. Okay. Did take medicine no? Oh, gee, I did. Oh, god, I did. The thing I'm terrible problems inhalers. The breathing worse? No, breathing fine. No, I'm keeping control it, -. Okay. Wait I tell happened. I Symbicort. Yeah. And affecting eyesight. That's really weird. Oh, know, know what? What? And see, tell that. As side effect, yeah. It's side effect. And getting bad I take I see. Okay."
-#print("Removed stopwords:",remove_stop_words(sentence))
 
 def posTagger(tokenized_sentences) :
     tagged = []
@@ -135,11 +127,7 @@ if __name__ == '__main__':
 	        print(" ")
 	        print("EXECUTION TIME FOR NEURAL NETWORK")
 	        print("--- %s seconds ---" % (time.time() - start_time1))
-            #f1.write(json.dumps(content))
-            
-
-#f.close()
-
+   
 print(" ")
 print("EXECUTION TIME")
 print("--- %s seconds ---" % (time.time() - start_time))
