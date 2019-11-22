@@ -27,3 +27,7 @@ SUBJECTIVE SENTENCES
 <list of subjective sentences in the text>
 ```
 
+Reference
+------------------------
+
+https://github.com/fractalego/subjectivity_classifier
