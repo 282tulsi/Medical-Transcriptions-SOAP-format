@@ -26,5 +26,7 @@ The SOAP note (an acronym for subjective, objective, assessment, and plan) is a 
 
 Subjective sentences describe people's opinions, points-of-view, interpretations, comparisons, sentiments, judgments, appraisals or feelings toward entities, events and their properties.
 
+Subjective classification of a sentence is done using Bi-directional GRU's model.
+
 Chief-Complaint : Previously scheduled appointments(annual check-up or follow-up) 
 Follow up condition is classified based on doctor patient conversation consisting of greetings,salutations among the conversation.
