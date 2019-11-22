@@ -17,33 +17,10 @@ import re
 
 
 stop_words=stopwords.words('english')
-#special=['.',';',',','\'','"','-','/','*','+','=','!','@','$','%','^','&','``','\'\'','We','The','This', 'Thus', 'If', 'In', 'A', 'Then', 'There']
 special=['.',';',',','\'','"','-','/','*','+','=','!','@','$','%','^','&','``','\'\'']
 ps=PorterStemmer()
 lemmatizer=WordNetLemmatizer()
 
-'''def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-
-
-def predict(k, g, ne):
-
-    pickle_in = open(resource_path('decisiontree_test_trail.pickle'), 'rb')
-    clf = pickle.load(pickle_in)
-
-    predicted = clf.predict([[k, g, ne]])
-    accuracy = clf.predict_proba([[k, g, ne]])
-    #print("class[1-10] : " + str(predicted))
-
-    #print(np.max(accuracy))
-    return predicted'''
 
 def normalise(word):
     word = word.lower()
@@ -74,7 +51,6 @@ def text_to_vector(text):
                 w=normalise(word);
                 vec.append(w);
     return Counter(vec)
-
 
 
 def givKeywordsValue(text1, text2):
@@ -136,7 +112,6 @@ def Named_Entity(text1, text2):
     vector1 = remove_stopwrds(text1)
     vector1 = check_isupper(vector1)
     vector1 = remove_duplicate(vector1)
-    #print("Model answer entites: ", vector1)
     print("\n")
     print("Corpus Entities : ", vector1)
 
@@ -147,11 +122,8 @@ def Named_Entity(text1, text2):
     if ne_count == 0:
         print("Matched entites: NONE")
     else:
-        #print("Matched entites: ", ne)
         print("\n")
 
-    #print("No of matched entites: ", ne_count)    
-    #print("\n")
     kval=0;
     if model_count !=0:
         ne_value = (ne_count*100)/model_count
@@ -178,21 +150,7 @@ def classify(model_greet, convo):
     if (len(convo.split())) <= 5:
         return 0
     k = givKeywordsValue(model_greet, convo)
-
-    '''
-    # GRAMMAR ==>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    try:
-        req = requests.get("https://api.textgears.com/check.php?text=" + convo + "&key=JmcxHCCPZ7jfXLF6")
-        no_of_errors = len(req.json()['errors'])
-        if no_of_errors > 5 or k == 6:
-            g = 0
-        else:
-            g = 1
-    except requests.exceptions.ConnectionError as errc:
-        g = 1
-    '''
-    
+	
     # Named Entity ==>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     ne = Named_Entity(model_greet, convo)
@@ -207,7 +165,6 @@ def classify(model_greet, convo):
     else:
         print("None")
         print("\n")
-    #print("Grammar accuracy score : ", g)
     #print("Named entity score : ", ne)
 
     # Predict score ==>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -218,7 +175,6 @@ def classify(model_greet, convo):
 
 model_greet = sys.argv[1]
 convo = sys.argv[2]
-#Total_marks = sys.argv[3]
 
 file = open(model_greet, 'r', encoding = 'cp1252')
 model_greet = file.read()
@@ -229,7 +185,4 @@ print("\n")
 print("CONVERSATION :")
 print(str(convo))
 
-#res = evaluate_ans(model_ans, student_ans, Total_marks)
 classify(model_greet, convo)
-
-#print("Marks Obtained : " + str(int(res)) + " / " + str(Total_marks))
