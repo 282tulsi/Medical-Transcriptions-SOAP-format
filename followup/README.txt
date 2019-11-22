@@ -1,5 +1,8 @@
 ##Subjective Classification as follow up, new patient tagging
 
+Installation
+------------
+
 ##Dependencies
 
     python >= 3.5
