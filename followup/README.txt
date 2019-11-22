@@ -10,7 +10,7 @@
 
 ##Usage
 
-python follow-up.py model/test.txt convo/text.txt 
+python follow-up.py model/text.txt convo/test.txt 
 
 First argument to follow-up.py is the model greetings, 2nd argument is doctor-patient conversation.
 
@@ -18,6 +18,7 @@ First argument to follow-up.py is the model greetings, 2nd argument is doctor-pa
 
 Ouput will be displayed in terminal. It shows the
 
-    model answer entities
-    cosine similarity score 
+    conversation
+    corpus entities
+    similarity score 
     classified class as follow-up or new-patient or none
