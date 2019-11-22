@@ -2,9 +2,11 @@ Installation
 ------------
 
 ```bash
-virtualenv --python=/usr/bin/python3 .env 
-source .env/bin/activate 
+conda create -n medicaltranscript python=3.6
+activate medicaltranscript
 pip install -r requirements.txt
+cd data
+mkdir word_embeddings
 wget http://nlulite.com/download/glove ./data/word_embeddings/
 ```
 
