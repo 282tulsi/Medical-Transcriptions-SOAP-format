@@ -1,5 +1,3 @@
-
-
 ##Subjective Classification as follow up, new patient tagging
 
 ##Dependencies
@@ -12,7 +10,7 @@
 
 ##Usage
 
-python evaluate_poc.py model\1.txt student\st_1.txt 5
+python follow-up.py model/test.txt convo/text.txt 
 
 First argument to follow-up.py is the model greetings, 2nd argument is doctor-patient conversation.
 
@@ -21,8 +19,6 @@ First argument to follow-up.py is the model greetings, 2nd argument is doctor-pa
 Ouput will be displayed in terminal. It shows the
 
     model answer entities
+    cosine similarity score 
     matched entites & number of matched entites
-    Keyword score, Grammar score, Named entity score
-    Total marks obtained by student out of marks given as argument to program
-
-
+    classified class as follow-up or new-patient or none
